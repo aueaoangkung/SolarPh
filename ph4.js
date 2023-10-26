@@ -8,6 +8,7 @@ let knex = require('knex')({
     }
 });
 
+
 const axios = require('axios');
 require('dotenv').config()
 const baseUrl = 'https://intl.fusionsolar.huawei.com/thirdData/'
@@ -54,7 +55,7 @@ function create_datetime(seconds, minute, hour, day, month, day_of_week){
     return seconds + " " + minute + " " + hour + " " + day + " " + month + " " + day_of_week
 }console.log("Start!!")
 
-cron.schedule('5 */30 6-19 * * *', () => {
+cron.schedule('5 */5 6-19 * * *', () => {
     writeDB();
 })
 
@@ -78,7 +79,7 @@ async function writeDB() {
             const sql = `PH4 No.${i+ 1}\t${dateTime.toLocaleString()}\t${devID}\t${ActivePower}\t\t${time}`
             
             console.log(sql)
-            await knex('Ph_Dv').insert({
+            await knex('Test').insert({
                 PowerHouse : 'PowerHouse4',
                 DateTime : dateTime,
                 CodeTime : minuteStr,

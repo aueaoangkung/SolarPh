@@ -43,7 +43,7 @@ function create_datetime(seconds, minute, hour, day, month, day_of_week){
     return seconds + " " + minute + " " + hour + " " + day + " " + month + " " + day_of_week
 }console.log("Start!!")
 
-cron.schedule('55 */30 6-19 * * *', () => {
+cron.schedule('55 */5 6-19 * * *', () => {
     writeDB();
 })
 
@@ -78,9 +78,7 @@ async function writeDB() {
             
             console.log(sql)
 
-            
-            
-            await knex('Ph_Dv').insert({
+            await knex('Test').insert({
                 PowerHouse : 'PowerHouse1',
                 DateTime : date,
                 CodeTime : minutes,
