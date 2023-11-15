@@ -1,9 +1,9 @@
 let knex = require('knex')({
     client: 'mssql',
     connection: {
-        server : 'AUEAOANGKUN',
-        user : 'sroiaudom',
-        password : '0822914530',
+        server : '10.28.99.42',
+        user : 'aueaoangkun_s',
+        password : '0822914530aA',
         database : 'NPS_SOLAR',
     }
 });
@@ -79,7 +79,7 @@ async function writeDB() {
             const sql = `PH4 No.${i+ 1}\t${dateTime.toLocaleString()}\t${devID}\t${ActivePower}\t\t${time}`
             
             console.log(sql)
-            await knex('Ph_Dv').insert({
+            await knex('TestDv').insert({
                 PowerHouse : 'PowerHouse4',
                 DateTime : dateTime,
                 CodeTime : minuteStr,
