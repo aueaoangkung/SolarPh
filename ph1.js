@@ -78,7 +78,7 @@ async function writeDB() {
             
             console.log(sql)
 
-            await knex('TestDv').insert({
+            await knex('Ph_Dv').insert({
                 PowerHouse : 'PowerHouse1',
                 DateTime : date,
                 CodeTime : minutes,

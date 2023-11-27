@@ -79,7 +79,7 @@ async function writeDB() {
             const sql = `PH3 No.${i+ 1}\t${dateTime.toLocaleString()}\t${devID}\t${ActivePower}\t\t${time}`
             
             console.log(sql)
-            await knex('TestDv').insert({
+            await knex('Ph_Dv').insert({
                 PowerHouse : 'PowerHouse3',
                 DateTime : dateTime,
                 CodeTime : minuteStr,

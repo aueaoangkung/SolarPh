@@ -81,7 +81,7 @@ async function writeDB() {
 
             
             
-            await knex('TestDv').insert({
+            await knex('Ph_Dv').insert({
                 PowerHouse : 'PowerHouse2',
                 DateTime : date,
                 CodeTime : minutes,
