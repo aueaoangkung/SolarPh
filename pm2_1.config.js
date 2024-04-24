@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
-        name: 'tool-solar-Ph1',
-        script: './ph1.js',
+        name: 'solar-Phase-1',
+        script: './Phase1.js',
         watch: false,
         env: {
             NODE_ENV: 'production'
