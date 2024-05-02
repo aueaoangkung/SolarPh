@@ -1,16 +1,17 @@
-let knex = require('knex')({
-    client: 'mssql',
-    connection: {
-        server: process.env.DB_SERVER,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_DATABASE,
-    }
+require('dotenv').config();
+const knex = require('knex')({
+  client: 'mssql',
+  connection: {
+    server: process.env.DB_SERVER,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+  }
 });
 
 const axios = require('axios');
 const cron = require("node-cron");
-require('dotenv').config();
+
 const baseUrl = 'https://gateway.isolarcloud.com.hk/openapi/';
 
 let currentToken = null; // Global token storage

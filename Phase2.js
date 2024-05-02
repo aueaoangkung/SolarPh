@@ -8,6 +8,7 @@ const knex = require('knex')({
     database: process.env.DB_DATABASE,
   }
 });
+
 const axios = require('axios');
 const https = require('https');
 const cron = require("node-cron");
